@@ -101,25 +101,18 @@
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
     }
 
     .cta-btn {
       padding: 12px 16px;
-      border-radius: 10px;
+      border-radius: 50%;
       font-weight: bold;
       text-decoration: none;
       text-align: center;
     }
 
-    .whatsapp {
-      background: #25D366;
-      color: black;
-    }
-
-    .telegram {
-      background: #229ED9;
-      color: white;
+    .cta-btn:hover {
+      scale: 1.5;
     }
 
     /* FORM */
@@ -230,8 +223,8 @@
 
 <!-- FIXED CTA -->
 <div class="fixed-cta">
-  <a href="https://wa.me/79999999999" class="cta-btn whatsapp">WhatsApp</a>
-  <a href="https://t.me/username" class="cta-btn telegram">Telegram</a>
+  <a href="https://wa.me/79999999999" class="cta-btn whatsapp"> <img src="./img/WhatsApp.png" alt="" class="media-logo whatsapp"> </a>
+  <a href="https://t.me/username" class="cta-btn telegram"> <img src="./img/Telegram.png" alt="" class="media-logo telegram"> </a>
 </div>
 
 <footer>
