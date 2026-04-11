@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявки для мастера каждый день</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 90px 20px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b, #0b1220);
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      margin-top: 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-green {
+      background: #22c55e;
+      color: black;
+    }
+
+    .btn-green:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-dark {
+      background: #334155;
+      color: white;
+      margin-left: 10px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* PROOF */
+    .review {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+    }
+
+    /* CTA FIXED */
+    .fixed-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-btn {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: black;
+    }
+
+    .telegram {
+      background: #229ED9;
+      color: white;
+    }
+
+    /* FORM */
+    .form {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 14px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #22c55e;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Сайт, который приносит заявки каждый день</h1>
+  <p>Для мастеров, которые хотят больше клиентов без рекламы</p>
+
+  <a href="#form" class="btn btn-green">Получить сайт</a>
+  <a href="#cases" class="btn btn-dark">Посмотреть примеры</a>
+</div>
+
+<!-- BENEFITS -->
+<section>
+  <h2>Почему сайт работает</h2>
+
+  <div class="container grid">
+
+    <div class="card">
+      <h3>⚡ Быстрый запуск</h3>
+      <p>Готов за 3–5 дней</p>
+    </div>
+
+    <div class="card">
+      <h3>📈 Заявки</h3>
+      <p>Сайт сделан под клиентов, а не дизайн</p>
+    </div>
+
+    <div class="card">
+      <h3>📱 Мобильный трафик</h3>
+      <p>90% клиентов заходят с телефона</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <h2>Примеры работ</h2>
+
+  <div class="container grid">
+
+    <div class="card review">
+      <h3>🔧 Ремонт кондиционеров</h3>
+      <p>+12 заявок за первую неделю</p>
+    </div>
+
+    <div class="card review">
+      <h3>⚡ Электрик</h3>
+      <p>+8 заявок без рекламы</p>
+    </div>
+
+    <div class="card review">
+      <h3>🚿 Сантехник</h3>
+      <p>стабильно 2–4 заявки в день</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="form">
+  <h2>Оставьте заявку</h2>
+
+  <div class="form">
+    <input type="text" placeholder="Имя">
+    <input type="tel" placeholder="Телефон">
+    <textarea placeholder="Какая услуга нужна?"></textarea>
+    <button>Отправить заявку</button>
+  </div>
+</section>
+
+<!-- FIXED CTA -->
+<div class="fixed-cta">
+  <a href="https://wa.me/79999999999" class="cta-btn whatsapp">WhatsApp</a>
+  <a href="https://t.me/username" class="cta-btn telegram">Telegram</a>
+</div>
+
+<footer>
+  © 2026 Сайты под заявки для бизнеса
+</footer>
+
+</body>
+</html>
