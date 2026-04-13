@@ -71,7 +71,7 @@ h2 {
 
 .card {
   background: #1e293b;
-  padding: 20px;
+  padding: 20px 40px 20px 20px;
   border-radius: 14px;
   transition: 0.3s;
 }
@@ -82,8 +82,21 @@ h2 {
 
 /* PROOF */
 .review {
-  background: #0f172a;
+  min-height: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   border: 1px solid #1e293b;
+}
+
+.picture-condition {
+  background-image: url('../img/cond.png');
+}
+.picture-electricity {
+  background-image: url('../img/el.png');
+}
+.picture-plumbing {
+  background-image: url('../img/plum.png');
 }
 
 /* CTA FIXED */
@@ -114,6 +127,7 @@ h2 {
   color: white;
 }
 
+
 /* CONTACTS */
 
 .contacts {
@@ -136,6 +150,14 @@ h2 {
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
+}
+
+.contacts__social-media {
+  max-height: 42px;
+}
+
+.media-logo {
+  border-radius: 50%;
 }
 
 /* FORM */
