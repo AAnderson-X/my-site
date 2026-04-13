@@ -48,9 +48,15 @@ body {
 }
 
 .btn-dark {
-  background: #334155;
+  background: #1a344b;
   color: white;
   margin-left: 10px;
+}
+
+/*BENEFITS*/
+
+.benefits__card-text {
+  margin-top: 40px;
 }
 
 /* SECTIONS */
@@ -70,7 +76,8 @@ h2 {
 }
 
 .card {
-  background: #1e293b;
+  background: #1a344b;
+  min-height: 155px;
   padding: 20px 40px 20px 10px;
   border-radius: 14px;
   transition: 0.3s;
@@ -107,6 +114,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 10px;
 }
 
 .cta-btn {
@@ -118,7 +126,7 @@ h2 {
 }
 
 .whatsapp {
-  background: #25D366;
+  background: #44f586;;
   color: black;
 }
 
@@ -189,7 +197,18 @@ button {
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 30px 30px 10px 30px;
   color: #94a3b8;
   background: radial-gradient(circle at top, #1e293b, #0b1220);
+}
+
+/* MEDIA */
+
+@media (max-width: 767px) {
+  section {
+    padding: 20px 20px;
+  }
+  .btn-dark {
+    margin-left: 0;
+  }
 }
