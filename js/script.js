@@ -14,30 +14,11 @@
 //   window.open(url, "_blank");
 // }
 
-
-// Ждем, пока весь HTML загрузится
-document.addEventListener('DOMContentLoaded', function() {
-
-  const form = document.getElementById('tg-form');
-
-  // Проверяем, нашли ли мы форму, прежде чем вешать событие
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // ... твой остальной код отправки ...
-      console.log("Форма найдена, отправка пошла!");
-    });
-  } else {
-    console.error("Ошибка: Форма с id='tg-form' не найдена на странице!");
-  }
-
-});
-
 // TELEGRAM
 
 // const TOKEN = "ENTER TOKEN";
 // const CHAT_ID = "ENTER CHAT ID";
-// const url = `https://script.google.com/macros/s/AKfycbxqJgbVLAOBbwhY_X1_QcE3-Jio__rdfGA_7l3cS1Dn6vX8SD6KHjsMaZisf0jSzItW/exec`;
+// const url = `ССЫЛКА ИЗ GOOGLE`;
 //
 // document.getElementById('tg-form').addEventListener('submit', function(e) {
 //   e.preventDefault();
@@ -80,40 +61,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // NEW TG
 
-// 1. Оставляем только URL твоего Google-скрипта
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyKPs0wohXcj8fMbyolOVqNaKcEN0xmjGAxQzM4LetDxA-Sgb2TpBbJUp-w0oECc1wUmw/exec";
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('tg-form');
+  const phoneInput = document.getElementById('phone');
 
+  //  ССЫЛКЫ ТУТ:
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyKPs0wohXcj8fMbyolOVqNaKcEN0xmjGAxQzM4LetDxA-Sgb2TpBbJUp-w0oECc1wUmw/exec";
 
-document.getElementById('tg-form').addEventListener('submit', function(e) {
-  e.preventDefault();
+  // 1. НАСТРОЙКА МАСКИ ТЕЛЕФОНА
+  if (phoneInput) {
+    const maskOptions = {
+      mask: '+{7} (000) 000-00-00',
+      lazy: false // маска видна сразу
+    };
+    IMask(phoneInput, maskOptions);
+  }
 
-  // Собираем данные из полей формы
-  const formData = {
-    name: this.name.value,
-    phone: this.phone.value,
-    message: this.message.value || 'Пусто'
-  };
+  // 2. ОБРАБОТКА ОТПРАВКИ ФОРМЫ
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      // Это критически важно, чтобы страница не перезагружалась
+      e.preventDefault();
 
-  // Отправляем данные на Google-скрипт
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors', // Важно для Google Apps Script, чтобы не было ошибок CORS
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
-  })
-    .then(() => {
-      // Поскольку мы используем 'no-cors', мы не получим статус ok/error в обычном виде,
-      // поэтому просто считаем, что если запрос ушел — всё успешно.
+      // Это останавливает любые другие скрытые обработчики, если они остались
+      e.stopImmediatePropagation();
 
-      const form = document.getElementById('tg-form');
-      const successBox = document.getElementById('success-message');
+      // Блокируем кнопку, чтобы нельзя было нажать 2 раза
+      const submitBtn = this.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Отправка..."; // Визуальный фидбек
+      }
 
-      form.style.display = 'none';
-      successBox.style.display = 'block';
-      this.reset();
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Техническая ошибка. Проверьте интернет.');
+      const formData = {
+        name: this.name.value,
+        phone: this.phone.value,
+        message: this.message.value || 'Пусто'
+      };
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+        .then(() => {
+          // Успешная отправка
+          const successBox = document.getElementById('success-message');
+          form.style.display = 'none';
+          if (successBox) successBox.style.display = 'block';
+
+          this.reset(); // Очищаем поля
+        })
+        .catch(err => {
+          // Ошибка (например, нет интернета)
+          console.error('Ошибка отправки:', err);
+          alert('Ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+
+          // Возвращаем кнопку в рабочее состояние
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Отправить";
+          }
+        });
     });
+  } else {
+    console.error("Критическая ошибка: Форма с id='tg-form' не найдена на странице!");
+  }
 });
+
+
+
+
+
+
+
+
+
+
