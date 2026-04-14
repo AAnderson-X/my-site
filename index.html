@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js"></script>
+
   <title>Заявки для мастера каждый день</title>
   <link rel="icon" sizes="32x32" href="favicon-32x32.png">
 
@@ -164,13 +164,19 @@
 <section id="form">
   <h2>Оставьте заявку</h2>
 
-  <div class="form">
-    <form onsubmit="sendToWhatsApp(event)">
-      <input type="text" id="name" placeholder="Имя" required>
-      <input type="tel" id="phone" placeholder="Телефон" required>
+  <div class="form__form-container">
+    <form id="tg-form">
+      <input type="text" id="name" placeholder="Ваше имя" required>
+      <input type="tel" id="phone" placeholder="Ваш телефон" required>
       <textarea id="message" placeholder="Коротко опишите услугу"></textarea>
-      <button type="submit">Отправить заявку в WhatsApp</button>
+      <button type="submit">Отправить заявку</button>
     </form>
+<!--    <form onsubmit="sendToWhatsApp(event)">-->
+<!--      <input type="text" id="name" placeholder="Имя" required>-->
+<!--      <input type="tel" id="phone" placeholder="Телефон" required>-->
+<!--      <textarea id="message" placeholder="Коротко опишите услугу"></textarea>-->
+<!--      <button type="submit">Отправить заявку в WhatsApp</button>-->
+<!--    </form>-->
   </div>
 </section>
 
@@ -183,6 +189,8 @@
 <footer>
   Nova Vector © 2026 | Сайты для бизнеса
 </footer>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
