@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // TELEGRAM
 
-// const TOKEN = "8772496210:AAFCDVGbm1IOw6lFkzc8bwg6Wkjh4qwW-e8";
-// const CHAT_ID = "779268768";
+// const TOKEN = "ENTER TOKEN";
+// const CHAT_ID = "ENTER CHAT ID";
 // const url = `https://script.google.com/macros/s/AKfycbxqJgbVLAOBbwhY_X1_QcE3-Jio__rdfGA_7l3cS1Dn6vX8SD6KHjsMaZisf0jSzItW/exec`;
 //
 // document.getElementById('tg-form').addEventListener('submit', function(e) {
@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 1. Оставляем только URL твоего Google-скрипта
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyKPs0wohXcj8fMbyolOVqNaKcEN0xmjGAxQzM4LetDxA-Sgb2TpBbJUp-w0oECc1wUmw/exec";
-
 
 
 document.getElementById('tg-form').addEventListener('submit', function(e) {
