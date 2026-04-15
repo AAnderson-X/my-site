@@ -130,6 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+function openWA() {
+  window.open("https://wa.me/79999999999?text=Здравствуйте!", "_blank");
+}
+
+function openTG() {
+  window.open("https://t.me/username", "_blank");
+}
+
 
 
 
