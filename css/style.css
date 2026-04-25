@@ -53,6 +53,10 @@ body {
   margin-left: 10px;
 }
 
+.btn-dark:hover {
+  background: #004469;
+}
+
 /*BENEFITS*/
 
 .benefits__card-text {
